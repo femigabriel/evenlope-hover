@@ -1,0 +1,127 @@
+body{
+    padding:25px;
+}
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  *{
+    margin:0;
+    padding:0;
+  }
+  
+  body{
+    background-color: bisque;
+  }
+  
+  .wrapper {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  
+  }
+  
+ 
+  .mail {
+    width: 300px;
+    height: 200px;
+    background: wheat;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  
+  
+  
+  .mail:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+  
+    border-left: 150px solid transparent;
+    border-right: 150px solid red;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid red;
+    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 5;
+  }
+  
+  
+  .mail:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 150px solid red;
+    border-right: 150px solid transparent;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid red;
+  
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 4;
+  }
+  
+  
+  .cover:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #ff8789;
+    border-bottom: 100px solid transparent;
+    z-index: 6;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: all 0.6s 0.4s ease;
+  
+  }
+  
+  .letter{
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 10px;
+    background: white;
+    width: 280px;
+    height: 180px;
+    border-radius: 20px;
+    transition: all 0.6s ease;
+  }
+  
+  .letter h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: 700;
+    color: #888888;
+
+    
+  }
+  
+  
+  .mail:hover .cover:before{
+    transform: rotateX(180deg);
+    transition: all 0.6s ease;
+    z-index: -1;
+    border-top: 100px solid orange;
+  }
+  
+  .mail:hover .letter{
+    top: -80px;
+    transition: all 0.6s 0.8s ease;
+  }
